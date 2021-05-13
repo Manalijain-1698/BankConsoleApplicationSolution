@@ -86,8 +86,8 @@ namespace BankConsoleApplication
             {
                 Console.WriteLine("Enter the New Account Pin");
                 Pin = Convert.ToInt32(Console.ReadLine());
-                var pinnumber = Pin.ToString();
-                if (string.IsNullOrEmpty(pinnumber)&& pinnumber.Length==4)
+
+                if (Pin==default(int))
                 {
                     Console.WriteLine("Pin cannot be empty and length should be exact 4 numbers!");
                 }
