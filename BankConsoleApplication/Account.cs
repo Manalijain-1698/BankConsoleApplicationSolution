@@ -31,30 +31,95 @@ namespace BankConsoleApplication
 
         public void TakeAccountDetailsFromUser()
         {
+
             Console.WriteLine("*********************************");
-            Console.WriteLine("Enter the Account Number");
-            id = Console.ReadLine();
+            int idcounter = 0;
+            while (idcounter == 0)
+            {
+                Console.WriteLine("Enter the Account Number");
+                id = Console.ReadLine();
+                if (string.IsNullOrEmpty(id))
+                {
+                    Console.WriteLine("Account Number cannot be empty!");
+                }
+                else
+                    idcounter = 1;
+
+            }
             Console.WriteLine("*********************************");
-            Console.WriteLine("Enter Name");
-            Name = Console.ReadLine();
+
+            int namecounter = 0;
+            while (namecounter == 0)
+            { 
+                Console.WriteLine("Enter Name");
+                name= Console.ReadLine();
+                if (string.IsNullOrEmpty(name))
+                {
+                    Console.WriteLine("Name cannot be empty!");
+                }
+                else
+                    namecounter = 1;
+
+            }
+            
             Console.WriteLine("*********************************");
-            Console.WriteLine("Enter the Account Type");
-            Accountype = Console.ReadLine();
+
+            int acctypecounter = 0;
+            while (acctypecounter == 0)
+            {
+                Console.WriteLine("Enter the Account Type");
+                Accountype = Console.ReadLine();
+                if (string.IsNullOrEmpty(Accountype))
+                {
+                    Console.WriteLine("Accounttype cannot be empty!");
+                }
+                else
+                    acctypecounter = 1;
+
+            }
+           
             Console.WriteLine("*********************************");
-            Console.WriteLine("Enter the New Account Pin");
-            Pin = Convert.ToInt32(Console.ReadLine());
+
+
+            int pincounter = 0;
+            while (pincounter == 0)
+            {
+                Console.WriteLine("Enter the New Account Pin");
+                Pin = Convert.ToInt32(Console.ReadLine());
+                var pinnumber = Pin.ToString();
+                if (string.IsNullOrEmpty(pinnumber)&& pinnumber.Length==4)
+                {
+                    Console.WriteLine("Pin cannot be empty and length should be exact 4 numbers!");
+                }
+                else
+                    pincounter = 1;
+
+            }
+            
             Console.WriteLine("*********************************");
-            Console.WriteLine("Enter the Amount");
-            amount = Convert.ToDouble(Console.ReadLine());
+
+            int accountcounter = 0;
+            while (accountcounter == 0)
+            {
+                Console.WriteLine("Enter the Amount");
+                amount = Convert.ToDouble(Console.ReadLine());
+                var amountAsString = acctypecounter.ToString();
+                if (string.IsNullOrEmpty(amountAsString))
+                {
+                    Console.WriteLine("Amount cannot be empty!");
+                }
+                else
+                    accountcounter = 1;
+
+            }
+            
             Console.WriteLine("*********************************");
 
 
         }
-
         public string Id { get => id; set => id = value; }
         public string Name { get=>name; set=>name=value; }
         public string Accountype { get=>accountType; set=>accountType=value; }
-
         public int Pin { get=>pin; set=>pin=value; }
         public double Amount { get=>amount; set=>amount=value; }
 
